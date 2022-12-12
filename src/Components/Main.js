@@ -9,7 +9,7 @@ const Main = () => {
     const searchBook = (e) => {
         if (e.key === "Enter") { 
 
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBEGorFybvubiI6byCmmRcr9p8j3xWVoLw'+'&maxResults=40')
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyBEGorFybvubiI6byCmmRcr9p8j3xWVoLw&maxResults=40`)
             .then(response => setBookData(response.data.items))
             .catch(error => console.log(error))
         }
@@ -33,7 +33,7 @@ const Main = () => {
                         onKeyPress={searchBook}
                     />
 
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <img src='./Images/bg2.png' alt='' />
              
